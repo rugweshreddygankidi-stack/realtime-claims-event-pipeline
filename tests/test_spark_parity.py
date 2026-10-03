@@ -3,7 +3,7 @@
 Needs pyspark and Java; skipped automatically when pyspark is not installed.
 """
 import random
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 
 import pytest
 
