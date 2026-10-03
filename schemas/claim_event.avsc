@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "ClaimEvent",
+  "namespace": "com.example.claims",
+  "doc": "A single health-insurance claim event. claim_event_id is the idempotency key.",
+  "fields": [
+    {"name": "claim_event_id", "type": "string"},
+    {"name": "claim_id", "type": "string"},
+    {"name": "member_id", "type": "string"},
+    {"name": "provider_id", "type": "string"},
+    {"name": "claim_status", "type": {"type": "enum", "name": "ClaimStatus",
+      "symbols": ["SUBMITTED", "APPROVED", "DENIED", "PENDING_REVIEW"]}},
+    {"name": "claim_amount", "type": "double"},
+    {"name": "diagnosis_code", "type": "string"},
+    {"name": "service_date", "type": {"type": "int", "logicalType": "date"}},
+    {"name": "event_ts", "type": {"type": "long", "logicalType": "timestamp-millis"}}
+  ]
+}
